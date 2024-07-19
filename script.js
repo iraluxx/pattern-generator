@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
     const generateButton = document.getElementById('generate');
     const gradientPreview = document.getElementById('gradient-preview');
+    const downloadButton = document.getElementById('download');
     const ctx = gradientPreview.getContext('2d');
 
     // Set canvas size to match iPhone 13 aspect ratio
@@ -88,6 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
         return [r, g, b];
     }
 
+    function downloadPattern() {
+        const dataUrl = gradientPreview.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.download = 'tie-dye-pattern.png';
+        link.href = dataUrl;
+        link.click();
+    }
+
+
     generateButton.addEventListener('click', function() {
         console.log('Generate button clicked');
         generatePattern();
@@ -99,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
             generatePattern();
         });
     });
+
+    downloadButton.addEventListener('click', downloadPattern);
 
     // Initial generation
     generatePattern();
