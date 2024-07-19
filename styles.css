@@ -81,13 +81,28 @@ button:hover {
     background-color: #555;
 }
 
+#gradient-preview-container {
+    width: 100%;
+    padding-top: 216.67%; /* 650/300 aspect ratio */
+    position: relative;
+    margin-top: 20px;
+}
+
 #gradient-preview {
-    display: block;
-    margin: 20px auto 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ddd;
     border-radius: 2px;
-    max-width: 100%;
-    height: auto;
+}
+
+#loadingIndicator {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    display: none;
 }
 
 @media (max-width: 480px) {
@@ -111,45 +126,4 @@ button:hover {
         padding: 10px;
         font-size: 0.9em;
     }
-}
-
-.color-button {
-    width: 100%;
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 300px;
-    text-align: center;
-}
-
-#colorPicker {
-    width: 100%;
-    height: 50px;
-    margin-bottom: 20px;
-}
-
-#loadingIndicator {
-    text-align: center;
-    margin-top: 10px;
-    font-style: italic;
 }
