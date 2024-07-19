@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tie-Dye Pattern Generator</title>
+    <title>Pattern Generator</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Tie-Dye Pattern Generator</h1>
+        <h1>Pattern Generator</h1>
+        <h2>Create beautiful patterns with the click of a button.</h2>
         <div class="color-inputs">
             <div class="color-input">
                 <label for="color1">Color 1:</label>
@@ -27,11 +31,16 @@
                 <input type="color" id="color4" value="#ffff00">
             </div>
         </div>
-        <button id="generate">Generate New Pattern</button>
+        <div class="button-container">
+            <button id="generate">Generate New Pattern</button>
+        </div>
+        
         <div id="gradient-preview-container">
             <canvas id="gradient-preview"></canvas>
         </div>
-        <button id="download">Download Pattern</button>
+        <div class="button-container">
+            <button id="download">Download Pattern</button>
+        </div>
         <div id="loadingIndicator">Generating pattern...</div>
     </div>
     <script src="script.js"></script>
