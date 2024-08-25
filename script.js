@@ -151,3 +151,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const generateButton = document.getElementById('generate');
+    let isFirstClick = true;
+
+    generateButton.addEventListener('click', function() {
+        if (isFirstClick) {
+            generateButton.textContent = 'generate again!';
+            isFirstClick = false;
+        }
+        
+        // Your existing code to generate the pattern goes here
+        generatePattern();
+    });
+
+    function generatePattern() {
+        // Your existing pattern generation code
+        // ...
+    }
+
+    // Rest of your JavaScript code
+    // ...
+});
