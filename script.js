@@ -151,26 +151,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 document.addEventListener('DOMContentLoaded', function() {
     const generateButton = document.getElementById('generate');
-    let isFirstClick = true;
+    const colorInputs = document.querySelectorAll('input[type="color"]');
+    let isFirstGeneration = true;
 
-    generateButton.addEventListener('click', function() {
-        if (isFirstClick) {
-            generateButton.textContent = 'generate again!';
-            isFirstClick = false;
-        }
-        
-        // Your existing code to generate the pattern goes here
-        generatePattern();
-    });
+    function updateButtonText(text) {
+        generateButton.textContent = text;
+    }
+
+    function resetButtonText() {
+        updateButtonText('generate!');
+        isFirstGeneration = true;
+    }
 
     function generatePattern() {
-        // Your existing pattern generation code
+        // Show loading state
+        updateButtonText('generating...');
+
+        // Simulate pattern generation (replace this with your actual generation code)
+        setTimeout(() => {
+            // After generation is complete
+            if (isFirstGeneration) {
+                updateButtonText('generate again!');
+                isFirstGeneration = false;
+            } else {
+                updateButtonText('generate again!');
+            }
+        }, 1000); // Adjust this timeout to match your actual generation time
+
+        // Your existing pattern generation code goes here
         // ...
     }
 
-    // Rest of your JavaScript code
-    // ...
+    generateButton.addEventListener('click', generatePattern);
+
+    colorInputs.forEach(input => {
+        input.addEventListener('change', resetButtonText);
+    });
+
+    // Initial state
+    resetButtonText();
 });
