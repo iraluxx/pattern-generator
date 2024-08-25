@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pattern Generator</title>
+    <title>gradient pattern generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
@@ -14,35 +14,44 @@
 </head>
 <body>
     <div class="container">
-        <h1>Pattern Generator</h1>
-        <h2>Create beautiful patterns with the click of a button.</h2>
+        <h1>gradient pattern generator</h1>
+        <h2>pick 4 colours, any colours:</h2>
         <div class="color-inputs">
             <div class="color-input">
-                <label for="color1">Color 1:</label>
-                <input type="color" id="color1" value="#ff0000">
+                <div class="color-picker-container">
+                    <input type="color" id="color1" value="#ff0000">
+                    <span class="color-hex">#ff0000</span>
+                </div>
             </div>
             <div class="color-input">
-                <label for="color2">Color 2:</label>
-                <input type="color" id="color2" value="#00ff00">
+                <div class="color-picker-container">
+                    <input type="color" id="color2" value="#00ff00">
+                    <span class="color-hex">#00ff00</span>
+                </div>
             </div>
             <div class="color-input">
-                <label for="color3">Color 3:</label>
-                <input type="color" id="color3" value="#0000ff">
+                <div class="color-picker-container">
+                    <input type="color" id="color3" value="#0000ff">
+                    <span class="color-hex">#0000ff</span>
+                </div>
             </div>
             <div class="color-input">
-                <label for="color4">Color 4:</label>
-                <input type="color" id="color4" value="#ffff00">
+                <div class="color-picker-container">
+                    <input type="color" id="color4" value="#ffff00">
+                    <span class="color-hex">#ffff00</span>
+                </div>
             </div>
         </div>
+
         <div class="button-container">
-            <button id="generate">Generate New Pattern</button>
+            <button id="generate">generate!</button>
         </div>
         
         <div id="gradient-preview-container">
             <canvas id="gradient-preview"></canvas>
         </div>
         <div class="button-container">
-            <button id="download">Download Pattern</button>
+            <button id="download">download!</button>
         </div>
         <div id="loadingIndicator">Generating pattern...</div>
     </div>

@@ -135,3 +135,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial generation
     generatePattern();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const colorInputs = document.querySelectorAll('input[type="color"]');
+    
+    colorInputs.forEach(input => {
+        const hexSpan = input.nextElementSibling;
+        
+        // Update hex value on initial load
+        hexSpan.textContent = input.value;
+        
+        // Update hex value when color changes
+        input.addEventListener('input', function() {
+            hexSpan.textContent = this.value;
+        });
+    });
+});
