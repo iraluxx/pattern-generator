@@ -16,7 +16,7 @@ body {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     background-color: #f0f0f0;
     color: #000000;
-    line-height: 1.6;
+    /* line-height: 1.6; */
     padding: 20px;
     min-height: 100vh;
     display: flex;
@@ -40,6 +40,7 @@ h1 {
     color: #000000;
     font-size: 2.5em;
     margin-bottom: 50px;
+    margin-top:50px;
     font-weight: 700;
     letter-spacing: -0.06em;
 }
@@ -49,7 +50,7 @@ h2 {
     font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     text-align: center;
     color: #2e2c2c;
-    font-size: 1em;
+    font-size: 1.1em;
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: -0.05em;
