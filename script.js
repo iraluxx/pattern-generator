@@ -151,45 +151,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const generateButton = document.getElementById('generate');
     const colorInputs = document.querySelectorAll('input[type="color"]');
     let isFirstGeneration = true;
+    let colorsChanged = false;
 
     function updateButtonText(text) {
         generateButton.textContent = text;
-    }
-
-    function resetButtonText() {
-        updateButtonText('generate!');
-        isFirstGeneration = true;
     }
 
     function generatePattern() {
         // Show loading state
         updateButtonText('generating...');
 
-        // Simulate pattern generation (replace this with your actual generation code)
+        // Your actual pattern generation code goes here
+        // For demonstration, we'll use setTimeout
         setTimeout(() => {
             // After generation is complete
-            if (isFirstGeneration) {
+            if (isFirstGeneration || colorsChanged) {
                 updateButtonText('generate again!');
                 isFirstGeneration = false;
+                colorsChanged = false;
             } else {
                 updateButtonText('generate again!');
             }
-        }, 1000); // Adjust this timeout to match your actual generation time
 
-        // Your existing pattern generation code goes here
-        // ...
+            // Your code to actually draw the gradient goes here
+            // ...
+
+        }, 1000); // Replace with your actual generation time
     }
 
     generateButton.addEventListener('click', generatePattern);
 
     colorInputs.forEach(input => {
-        input.addEventListener('change', resetButtonText);
+        input.addEventListener('change', () => {
+            colorsChanged = true;
+            if (!isFirstGeneration) {
+                updateButtonText('generate!');
+            }
+            // Remove any code here that was automatically generating the gradient
+        });
     });
 
     // Initial state
-    resetButtonText();
+    updateButtonText('generate!');
 });
